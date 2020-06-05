@@ -13,17 +13,10 @@
  *  implied.  See the License for the specific language governing
  *  permissions and limitations under the License.
  */
-package com.redhat.offermanagement;
+package com.redhat.customereligibility;
 
-import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.servlet.CamelHttpTransportServlet;
-import org.apache.camel.model.rest.RestBindingMode;
-import org.apache.camel.model.rest.RestParamType;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -8,10 +8,7 @@
 
   <groupId>com.redhat</groupId>
   <artifactId>customer-product-service-eligibility</artifactId>
-  <version>1.0.0.0</version>
-
-  <name>elastic service</name>
-  <description>elastic service</description>
+  <version>1.0.0</version>
 
 
     <properties>
@@ -182,7 +179,7 @@
         <configuration>
           <specificationUri>${project.basedir}/src/spec/customer-eligibility.json</specificationUri>
           <className>CamelRoutes</className>
-          <packageName>com.redhat.offermanagement.routes</packageName>
+          <packageName>com.redhat.customereligibility.routes</packageName>
           <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
         </configuration>
       </plugin>
