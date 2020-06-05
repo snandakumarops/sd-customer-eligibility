@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 /**
  * Generated from Swagger specification by Camel REST DSL generator.
  */
@@ -26,7 +29,7 @@ public final class CamelRoutes extends RouteBuilder {
         return registration;
     }
 
-    public void configure() {
+    public void configure() throws UnknownHostException {
 
         restConfiguration()
                 .component("servlet")
@@ -37,6 +40,7 @@ public final class CamelRoutes extends RouteBuilder {
                 .apiContextRouteId("swagger") //id of route providing the swagger endpoint
 
                 //Swagger properties
+                .host(InetAddress.getLocalHost().getHostAddress())
                 .contextPath("/service").port(8080)
                 .host("localhost")
                 .apiProperty("api.title", "Example REST api")
