@@ -8,6 +8,7 @@ import org.apache.camel.component.servlet.CamelHttpTransportServlet;
 import org.apache.camel.model.rest.RestBindingMode;
 import org.apache.camel.model.rest.RestConfigurationDefinition;
 import org.apache.camel.model.rest.RestParamType;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -24,6 +25,8 @@ import java.net.UnknownHostException;
 @Generated("org.apache.camel.generator.swagger.PathGenerator")
 public final class CamelRoutes extends RouteBuilder {
 
+    @Value("oc.project.path")
+    String projectPath;
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         ServletRegistrationBean registration = new ServletRegistrationBean(new CamelHttpTransportServlet(), "/service/*");
@@ -43,7 +46,7 @@ public final class CamelRoutes extends RouteBuilder {
 
                 .contextPath("/service")
 
-                .host("127.0.0.1:8080")
+                .host(projectPath)
                 .apiProperty("api.title", "Example REST api")
                 .apiProperty("api.version", "1.0")
         ;
