@@ -179,8 +179,8 @@
         <configuration>
           <specificationUri>${project.basedir}/src/spec/customer-eligibility.json</specificationUri>
           <className>CamelRoutes</className>
-          <packageName>com.redhat.customereligibility.routes</packageName>
-          <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+          <packageName>com.redhat.customereligibility</packageName>
+          <outputDirectory>${project.basedir}/src/main/java/com/redhat/customereligibility</outputDirectory>
         </configuration>
       </plugin>
 
