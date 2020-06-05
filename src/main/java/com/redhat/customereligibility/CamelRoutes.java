@@ -42,7 +42,7 @@ public final class CamelRoutes extends RouteBuilder {
                 .apiContextRouteId("swagger") //id of route providing the swagger endpoint
 
                 //Swagger properties
-                .host(InetAddress.getLocalHost().getHostName())
+                .host("localhost")
                 .port(8080)
                 .contextPath("/service")
 
