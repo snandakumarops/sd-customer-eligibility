@@ -43,6 +43,7 @@ public final class CamelRoutes extends RouteBuilder {
 
                 //Swagger properties
                 .host(InetAddress.getLocalHost().getHostAddress())
+                .port(8080)
                 .contextPath("/service").port(8080)
 
 
