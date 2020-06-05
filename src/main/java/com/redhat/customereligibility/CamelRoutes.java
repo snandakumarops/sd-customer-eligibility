@@ -2,9 +2,11 @@ package com.redhat.customereligibility;
 
 import javax.annotation.Generated;
 
+import io.swagger.models.auth.In;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.servlet.CamelHttpTransportServlet;
 import org.apache.camel.model.rest.RestBindingMode;
+import org.apache.camel.model.rest.RestConfigurationDefinition;
 import org.apache.camel.model.rest.RestParamType;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -40,10 +42,10 @@ public final class CamelRoutes extends RouteBuilder {
                 .apiContextRouteId("swagger") //id of route providing the swagger endpoint
 
                 //Swagger properties
-
+                .host(InetAddress.getLocalHost().getHostAddress())
                 .contextPath("/service").port(8080)
 
-                .apiProperty("api.path","/service")
+
                 .apiProperty("api.title", "Example REST api")
                 .apiProperty("api.version", "1.0")
         ;
