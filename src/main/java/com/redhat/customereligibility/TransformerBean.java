@@ -31,14 +31,14 @@ public class TransformerBean {
         BianResponse bianResponse = new BianResponse();
         BianRequest bianRequest = new Gson().fromJson(exchange.getIn().getBody().toString(), BianRequest.class);
         Map dataMap = (Map) bianRequest.getData();
-        CRCustomerEligibilityAssessmentUpdateInputModel crRecord = new Gson().fromJson(dataMap.get("customerEligibilityAssessmentUpdateInputModel").toString(), CRCustomerEligibilityAssessmentUpdateInputModel.class);
+        CRCustomerEligibilityAssessmentUpdateInputModelCustomerEligibilityAssessmentInstanceRecord crRecord = new Gson().fromJson(dataMap.get("customerEligibilityAssessmentInstanceRecord").toString(), CRCustomerEligibilityAssessmentUpdateInputModelCustomerEligibilityAssessmentInstanceRecord.class);
         //Return Customer Eligibility Assessment
         CRCustomerEligibilityAssessmentEvaluateOutputModelCustomerEligibilityAssessmentInstanceRecord output = new CRCustomerEligibilityAssessmentEvaluateOutputModelCustomerEligibilityAssessmentInstanceRecord();
         output.setCustomerProductServiceTypeEligibility("Eligible: Customer is in Good Standing");
         CRCustomerEligibilityAssessmentUpdateOutputModel crCustomerEligibilityAssessmentEvaluateOutputModel = new CRCustomerEligibilityAssessmentUpdateOutputModel();
         crCustomerEligibilityAssessmentEvaluateOutputModel.setCustomerEligibilityAssessmentUpdateActionTaskReference("CEAIR780662");
         crCustomerEligibilityAssessmentEvaluateOutputModel.setCustomerEligibilityAssessmentUpdateActionTaskRecord(output);
-        crCustomerEligibilityAssessmentEvaluateOutputModel.setUpdateResponseRecord("Successfully added product" + crRecord.getCustomerEligibilityAssessmentInstanceRecord().getProductServiceType());
+        crCustomerEligibilityAssessmentEvaluateOutputModel.setUpdateResponseRecord("Successfully added product " + crRecord.getProductServiceType());
         crCustomerEligibilityAssessmentEvaluateOutputModel.setDate(new Date().toString());
         System.out.println("Update Product Usage: " + new Gson().toJson(crCustomerEligibilityAssessmentEvaluateOutputModel));
         bianResponse.setData(crCustomerEligibilityAssessmentEvaluateOutputModel);
