@@ -42,7 +42,7 @@ public final class CamelRoutes extends RouteBuilder {
                 .apiContextRouteId("swagger") //id of route providing the swagger endpoint
 
                 //Swagger properties
-                .host("localhost")
+                .host("http://customer-eligibility-camel-sd.apps.cluster-cc6c.cc6c.example.opentlc.com")
                 .port(8080)
                 .contextPath("/service")
 
