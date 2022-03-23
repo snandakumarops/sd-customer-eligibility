@@ -457,11 +457,7 @@ public final class CamelRoutes extends RouteBuilder {
                 .description("Filter to refine the result set. ex- NextBest Instance Status = 'pending'")
                 .endParam()
                 .to("direct:RetrieveCustomerProductServiceEligibilityBehaviorQualifierReferenceIds");
-        from("direct:evaluateCustomerEligibilityAssessment")
-                .bean(TransformerBean.class,"evaluateEligibility");
 
-        from("direct:updateCustomerEligibilityAssessment")
-                .bean(TransformerBean.class,"updateProductUsage");
 
     }
 }
