@@ -25,8 +25,7 @@ import java.net.UnknownHostException;
 @Generated("org.apache.camel.generator.swagger.PathGenerator")
 public final class CamelRoutes extends RouteBuilder {
 
-    @Value("${oc.project.path}")
-    String projectPath;
+
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         ServletRegistrationBean registration = new ServletRegistrationBean(new CamelHttpTransportServlet(), "/service/*");
@@ -46,7 +45,7 @@ public final class CamelRoutes extends RouteBuilder {
 
                 .contextPath("/service")
 
-                .host(projectPath)
+
                 .apiProperty("api.title", "Example REST api")
                 .apiProperty("api.version", "1.0")
         ;
